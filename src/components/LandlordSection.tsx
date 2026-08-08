@@ -271,17 +271,18 @@ export default function LandlordSection({ lang }: LandlordSectionProps) {
                     <label className="block text-xs font-semibold text-[#203028] mb-1.5">
                       {t.formCity} *
                     </label>
-                    <select
+                    <input
+                      type="text"
                       value={city}
                       onChange={(e) => setCity(e.target.value)}
+                      placeholder={
+                        lang === "ar"
+                          ? "مثال: الرياض"
+                          : "e.g. Riyadh"
+                      }
                       required
                       className="w-full py-3 px-4 rounded-xl bg-[#FAF8F3] border border-[#243A2D]/15 text-sm text-[#203028] focus:outline-none focus:border-[#243A2D] transition-colors"
-                    >
-                      <option value="">{t.formSelectCity}</option>
-                      <option value="riyadh">{t.cityRiyadh}</option>
-                      <option value="jeddah">{t.cityJeddah}</option>
-                      <option value="khobar">{t.cityKhobar}</option>
-                    </select>
+                    />
                   </div>
 
                   {/* Field 5: Property Type */}
@@ -289,17 +290,18 @@ export default function LandlordSection({ lang }: LandlordSectionProps) {
                     <label className="block text-xs font-semibold text-[#203028] mb-1.5">
                       {t.formUnitType} *
                     </label>
-                    <select
+                    <input
+                      type="text"
                       value={unitType}
                       onChange={(e) => setUnitType(e.target.value)}
+                      placeholder={
+                        lang === "ar"
+                          ? "مثال: شقة، فيلا، أدوار"
+                          : "e.g. Apartment, Villa"
+                      }
                       required
                       className="w-full py-3 px-4 rounded-xl bg-[#FAF8F3] border border-[#243A2D]/15 text-sm text-[#203028] focus:outline-none focus:border-[#243A2D] transition-colors"
-                    >
-                      <option value="">{t.formSelectType}</option>
-                      <option value="apartment">{t.unitTypeApartment}</option>
-                      <option value="studio">{t.unitTypeStudio}</option>
-                      <option value="villa">{t.unitTypeVilla}</option>
-                    </select>
+                    />
                   </div>
 
                   {/* Submit Button */}
